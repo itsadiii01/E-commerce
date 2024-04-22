@@ -48,7 +48,7 @@ const CartPage = () => {
  //get payment gateway token
  const getToken = async () => {
   try {
-    const { data } = await axios.get(`${process.env.REACT_APP_API}/api/v1/product/braintree/token`);
+    const { data } = await axios.get(`https://ecom-server-production-87e0.up.railway.app/api/v1/product/braintree/token`);
     setClientToken(data?.clientToken);
   } catch (error) {
     console.log(error);
@@ -63,7 +63,7 @@ const handlePayment = async () => {
   try {
     setLoading(true);
     const { nonce } = await instance.requestPaymentMethod();
-    const { data } = await axios.post(`${process.env.REACT_APP_API}/api/v1/product/braintree/payment`, {
+    const { data } = await axios.post(`https://ecom-server-production-87e0.up.railway.app/api/v1/product/braintree/payment`, {
       nonce,
       cart,
     });
@@ -101,7 +101,7 @@ const handlePayment = async () => {
               <div className="row mb-2 p-3 card flex-row">
                 <div className="col-md-4">
                   <img
-                    src={`${process.env.REACT_APP_API}/api/v1/product/product-photo/${p._id}`}
+                    src={`https://ecom-server-production-87e0.up.railway.app/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                     // width="100px"
