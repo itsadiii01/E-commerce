@@ -4,12 +4,7 @@
     {
       "src": "index.js",
       "use": "@vercel/node",
-      "config": {
-        "env": {
-          "MONGO_URl": "{{ mongodb+srv://itsadiii:Up33%40c7888.@cluster1.ivldkmx.mongodb.net/ecommerce02 }}", 
-          
-        }
-      }
+     
     }
   ],
   "routes": [
