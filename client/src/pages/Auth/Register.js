@@ -32,7 +32,7 @@ try {
      toast.error("Password must contain at least 6 characters, one special character, and one capital letter.");
      return;
    }
-    const res = await axios.post(`https://ecom-server-production-87e0.up.railway.app/api/v1/auth/register`,
+    const res = await axios.post(`https://aditya-ecom-backend.onrender.com/api/v1/auth/register`,
     {name,phone,email,password,address,answer});
 
     if(res && res.data.success){

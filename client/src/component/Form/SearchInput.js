@@ -10,7 +10,7 @@ const SearchInput = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/product/search/${values.keyword}`
+        `https://aditya-ecom-backend.onrender.com/api/v1/product/search/${values.keyword}`
       );
       setValues({ ...values, results: data });
       navigate("/search");

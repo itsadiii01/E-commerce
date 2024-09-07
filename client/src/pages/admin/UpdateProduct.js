@@ -23,7 +23,7 @@ const UpdateProduct = () => {
     const getSingleProduct = async () => {
         try {
           const { data } = await axios.get(
-            `https://ecom-server-production-87e0.up.railway.app/api/v1/product/get-product/${params.slug}`
+            `https://aditya-ecom-backend.onrender.com/api/v1/product/get-product/${params.slug}`
           );
           setName(data.product.name);
           setId(data.product._id);
@@ -45,7 +45,7 @@ const UpdateProduct = () => {
         //get all category
   const getAllCategory = async () => {
     try {
-      const { data } = await axios.get(`https://ecom-server-production-87e0.up.railway.app/api/v1/category/get-category`);
+      const { data } = await axios.get(`https://aditya-ecom-backend.onrender.com/api/v1/category/get-category`);
       if (data?.success) {
         setCategories(data?.category);
       }
@@ -70,7 +70,7 @@ const UpdateProduct = () => {
       photo && productData.append("photo", photo);
       productData.append("category", category);
       const { data } = axios.put(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/product/update-product/${id}`,
+        `https://aditya-ecom-backend.onrender.com/api/v1/product/update-product/${id}`,
         productData
       );
       if (data?.success) {
@@ -90,7 +90,7 @@ const UpdateProduct = () => {
       let answer = window.prompt("Are You Sure want to delete this product ? ");
       if (!answer) return;
       const { data } = await axios.delete(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/product/delete-product/${id}`
+        `https://aditya-ecom-backend.onrender.com/api/v1/product/delete-product/${id}`
       );
       toast.success("Product Deleted Succfully", { duration: 5000 });
       navigate("/dashboard/admin/products");
@@ -153,7 +153,7 @@ const UpdateProduct = () => {
                 ) : (
                   <div className="text-center">
                     <img
-                      src={`https://ecom-server-production-87e0.up.railway.app/api/v1/product/product-photo/${id}`}
+                      src={`https://aditya-ecom-backend.onrender.com/api/v1/product/product-photo/${id}`}
                       alt="product_photo"
                       height={"200px"}
                       className="img img-responsive"

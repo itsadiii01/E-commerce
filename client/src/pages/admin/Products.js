@@ -10,7 +10,7 @@ const Products = () => {
   
  const getAllproducts = async()=>{
   try {
-    const {data} = await axios.get(`https://ecom-server-production-87e0.up.railway.app/api/v1/product/get-product`)
+    const {data} = await axios.get(`https://aditya-ecom-backend.onrender.com/api/v1/product/get-product`)
     setProducts(data.products)
     
   } catch (error) {
@@ -44,7 +44,7 @@ const Products = () => {
               >
                 <div className="card m-2" style={{ width: "18rem" }}>
                   <img
-                    src={`https://ecom-server-production-87e0.up.railway.app/api/v1/product/product-photo/${p._id}`}
+                    src={`https://aditya-ecom-backend.onrender.com/api/v1/product/product-photo/${p._id}`}
                     className="card-img-top"
                     alt={p.name}
                   />

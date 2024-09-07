@@ -18,7 +18,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/category/create-category`,
+        `https://aditya-ecom-backend.onrender.com/api/v1/category/create-category`,
         { name }
       );
       if (data?.success) {
@@ -36,7 +36,7 @@ const CreateCategory = () => {
   const getAllCategory= async () => {
     try {
       const { data } = await axios.get(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/category/get-category`
+        `https://aditya-ecom-backend.onrender.com/api/v1/category/get-category`
       );
       if (data.success) {
         setCategories(data.category);
@@ -55,7 +55,7 @@ const handleUpdate = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/category/update-category/${selected._id}`,
+        `https://aditya-ecom-backend.onrender.com/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data.success) {
@@ -76,7 +76,7 @@ const handleUpdate = async (e) => {
 const handleDelete = async (pId) => {
     try {
       const { data } = await axios.delete(
-        `https://ecom-server-production-87e0.up.railway.app/api/v1/category/delete-category/${pId}`
+        `https://aditya-ecom-backend.onrender.com/api/v1/category/delete-category/${pId}`
       );
       if (data.success) {
         toast.success(`category is deleted`);
